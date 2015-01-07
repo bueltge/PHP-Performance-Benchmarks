@@ -9,3 +9,8 @@ Now in 2015 is the simple benchmark also useful for me to learn about default PH
 
 ## Disclaimer
 I'm German and my English might be gruesome here and there. So please be patient with me and let me know of typos or grammatical farts. Thanks
+
+## Thanks
+ * [Thiemo Mättig](http://maettig.com/) for his work on his [project](http://maettig.com/code/php/php-performance-benchmarks.php) and public provision.
+ * Use [markable.in](http://markable.in/editor/) to convert html to Markdown.
+ * [GitHub](https://github.com) for the opportunity to share this public and for free include the possibility to maintain with other developers.
