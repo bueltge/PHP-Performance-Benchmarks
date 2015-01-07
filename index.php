@@ -132,7 +132,7 @@ function strcmp_method2( $var, $r ) {
 		$equal = ! strcmp( $var, $b );
 	}
 
-	return '!strcmp( $a, $b)';
+	return '!strcmp( $a, $b )';
 }
 
 function strcmp_method3( $var, $r ) {
@@ -143,7 +143,7 @@ function strcmp_method3( $var, $r ) {
 		$equal = strcmp( $var, $b ) == 0;
 	}
 
-	return 'strcmp( $a, $b) == 0';
+	return 'strcmp( $a, $b ) == 0';
 }
 
 function strcmp_method4( $var, $r ) {
@@ -154,7 +154,7 @@ function strcmp_method4( $var, $r ) {
 		$equal = strcmp( $var, $b ) === 0;
 	}
 
-	return 'strcmp( $a, $b) === 0';
+	return 'strcmp( $a, $b ) === 0';
 }
 
 function strcmp_method5( $var, $r ) {
@@ -165,7 +165,7 @@ function strcmp_method5( $var, $r ) {
 		$equal = strcasecmp( $var, $b ) === 0;
 	}
 
-	return 'strcasecmp( $a, $b) === 0';
+	return 'strcasecmp( $a, $b ) === 0';
 }
 
 //------------------------------------------------------------------------------
@@ -288,15 +288,19 @@ function empty_method1( $var, $r ) {
 	if ( $var < 0 ) {
 		unset( $var );
 	}
+
+	if ( ! isset( $var ) )
+		$var = FALSE;
+
 	$isEmpty = FALSE;
 	while ( $r -- ) {
-		if ( ! isset( $var ) || ! $var ) {
+		if ( ! $var ) {
 			$isEmpty = TRUE;
 		}
 	}
 
 	//if (empty( $var) != $isEmpty) var_dump( $var, 'if (!$var)');
-	return 'if (!$var)';
+	return 'if ( ! $var )';
 }
 
 function empty_method2( $var, $r ) {
@@ -320,9 +324,13 @@ function empty_method3( $var, $r ) {
 	if ( $var < 0 ) {
 		unset( $var );
 	}
+
+	if ( ! isset( $var ) )
+		$var = FALSE;
+
 	$isEmpty = FALSE;
 	while ( $r -- ) {
-		if ( ! isset( $var ) || "" === $var ) {
+		if ( $var == "" ) {
 			$isEmpty = TRUE;
 		}
 	}
@@ -336,15 +344,19 @@ function empty_method4( $var, $r ) {
 	if ( $var < 0 ) {
 		unset( $var );
 	}
+
+	if ( ! isset( $var ) )
+		$var = FALSE;
+
 	$isEmpty = FALSE;
 	while ( $r -- ) {
-		if ( ! isset( $var ) || "" === $var ) {
+		if ( "" == $var ) {
 			$isEmpty = TRUE;
 		}
 	}
 
 	//if (empty( $var) != $isEmpty) var_dump( $var, 'if ( "" == $var)');
-	return 'if ( "" == $var)';
+	return 'if ( "" == $var )';
 }
 
 function empty_method5( $var, $r ) {
@@ -352,9 +364,13 @@ function empty_method5( $var, $r ) {
 	if ( $var < 0 ) {
 		unset( $var );
 	}
+
+	if ( ! isset( $var ) )
+		$var = FALSE;
+
 	$isEmpty = FALSE;
 	while ( $r -- ) {
-		if ( ! isset( $var ) || "" === $var ) {
+		if ( $var === "" ) {
 			$isEmpty = TRUE;
 		}
 	}
@@ -368,15 +384,19 @@ function empty_method6( $var, $r ) {
 	if ( $var < 0 ) {
 		unset( $var );
 	}
+
+	if ( ! isset( $var ) )
+		$var = FALSE;
+
 	$isEmpty = FALSE;
 	while ( $r -- ) {
-		if ( ! isset( $var ) || "" === $var ) {
+		if ( "" === $var ) {
 			$isEmpty = TRUE;
 		}
 	}
 
 	//if (empty( $var) != $isEmpty) var_dump( $var, 'if ( "" === $var)');
-	return 'if ( "" === $var)';
+	return 'if ( "" === $var )';
 }
 
 function empty_method7( $var, $r ) {
@@ -384,15 +404,19 @@ function empty_method7( $var, $r ) {
 	if ( $var < 0 ) {
 		unset( $var );
 	}
+
+	if ( ! isset( $var ) )
+		$var = FALSE;
+
 	$isEmpty = FALSE;
 	while ( $r -- ) {
-		if ( ! isset( $var ) || strcmp( $var, "" ) == 0 ) {
+		if ( strcmp( $var, "" ) == 0 ) {
 			$isEmpty = TRUE;
 		}
 	}
 
 	//if (empty( $var) != $isEmpty) var_dump( $var, 'if (strcmp( $var, "" ) == 0)');
-	return 'if (strcmp( $var, "" ) == 0)';
+	return 'if ( strcmp( $var, "" ) == 0 )';
 }
 
 function empty_method8( $var, $r ) {
@@ -400,15 +424,19 @@ function empty_method8( $var, $r ) {
 	if ( $var < 0 ) {
 		unset( $var );
 	}
+
+	if ( ! isset( $var ) )
+		$var = FALSE;
+
 	$isEmpty = FALSE;
 	while ( $r -- ) {
-		if ( ! isset( $var ) || strcmp( "", $var ) == 0 ) {
+		if ( strcmp( "", $var ) == 0 ) {
 			$isEmpty = TRUE;
 		}
 	}
 
 	//if (empty( $var) != $isEmpty) var_dump( $var, 'if (strcmp( "", $var) == 0)');
-	return 'if (strcmp( "", $var) == 0)';
+	return 'if ( strcmp( "", $var ) == 0 )';
 }
 
 function empty_method9( $var, $r ) {
@@ -416,15 +444,19 @@ function empty_method9( $var, $r ) {
 	if ( $var < 0 ) {
 		unset( $var );
 	}
+
+	if ( ! isset( $var ) )
+		$var = FALSE;
+
 	$isEmpty = FALSE;
 	while ( $r -- ) {
-		if ( ! isset( $var ) || strlen( $var ) == 0 ) {
+		if ( strlen( $var ) == 0 ) {
 			$isEmpty = TRUE;
 		}
 	}
 
 	//if (empty( $var) != $isEmpty) var_dump( $var, 'if (strlen( $var) == 0)');
-	return 'if (strlen( $var) == 0)';
+	return 'if ( strlen( $var ) == 0 )';
 }
 
 function empty_method10( $var, $r ) {
@@ -432,15 +464,19 @@ function empty_method10( $var, $r ) {
 	if ( $var < 0 ) {
 		unset( $var );
 	}
+
+	if ( ! isset( $var ) )
+		$var = FALSE;
+
 	$isEmpty = FALSE;
 	while ( $r -- ) {
-		if ( ! isset( $var ) || ! strlen( $var ) ) {
+		if ( ! strlen( $var ) ) {
 			$isEmpty = TRUE;
 		}
 	}
 
 	//if (empty( $var) != $isEmpty) var_dump( $var, 'if (!strlen( $var) )');
-	return 'if (!strlen( $var) )';
+	return 'if ( ! strlen( $var ) )';
 }
 
 //------------------------------------------------------------------------------
@@ -839,7 +875,7 @@ function trim_method6( $string, $r ) {
 		$string = preg_replace( '/^,+/', "", preg_replace( '/,+$/', "", $string ) );
 	}
 
-	return 'preg_replace( \'/^,+/\', "", preg_replace( \'/,+$/\', "", &hellip;) )';
+	return 'preg_replace( \'/^,+/\', "", preg_replace( \'/,+$/\', "", &hellip; ) )';
 }
 
 //------------------------------------------------------------------------------
@@ -948,7 +984,7 @@ function loop_method1( &$array, $r ) {
 		}
 	}
 
-	return 'for ( $i = 0; $i < count( $array); $i++ )';
+	return 'for ( $i = 0; $i < count( $ ; $i++ )';
 }
 
 function loop_method2( &$array, $r ) {
@@ -960,7 +996,7 @@ function loop_method2( &$array, $r ) {
 		}
 	}
 
-	return 'for ( $i = 0, $count = count( $array); $i < $count; $i++ )';
+	return 'for ( $i = 0, $count = count( $array ); $i < $count; $i++ )';
 }
 
 function loop_method3( &$array, $r ) {
@@ -972,7 +1008,7 @@ function loop_method3( &$array, $r ) {
 		}
 	}
 
-	return 'for ( $i = count( $array) - 1; $i >= 0; $i-- )';
+	return 'for ( $i = count( $array ) - 1; $i >= 0; $i-- )';
 }
 
 function loop_method4( &$array, $r ) {
@@ -984,7 +1020,7 @@ function loop_method4( &$array, $r ) {
 		}
 	}
 
-	return 'for ( $i = count( $array) - 1; $i >= 0; --$i )';
+	return 'for ( $i = count( $array ) - 1; $i >= 0; --$i )';
 }
 
 function loop_method5( &$array, $r ) {
@@ -1020,7 +1056,7 @@ function concat_method1( $r ) {
 		$string = implode( " ", $array );
 	}
 
-	return 'implode( " ", $array)';
+	return 'implode( " ", $array )';
 }
 
 function concat_method2( $r ) {
