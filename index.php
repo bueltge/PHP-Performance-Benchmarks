@@ -984,7 +984,7 @@ function loop_method1( &$array, $r ) {
 		}
 	}
 
-	return 'for ( $i = 0; $i < count( $ ; $i++ )';
+	return 'for ( $i = 0; $i < count( $array ; $i++ )';
 }
 
 function loop_method2( &$array, $r ) {
