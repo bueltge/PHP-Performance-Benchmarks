@@ -289,8 +289,9 @@ function empty_method1( $var, $r ) {
 		unset( $var );
 	}
 
-	if ( ! isset( $var ) )
+	if ( ! isset( $var ) ) {
 		$var = FALSE;
+	}
 
 	$isEmpty = FALSE;
 	while ( $r -- ) {
@@ -325,8 +326,9 @@ function empty_method3( $var, $r ) {
 		unset( $var );
 	}
 
-	if ( ! isset( $var ) )
+	if ( ! isset( $var ) ) {
 		$var = FALSE;
+	}
 
 	$isEmpty = FALSE;
 	while ( $r -- ) {
@@ -345,8 +347,9 @@ function empty_method4( $var, $r ) {
 		unset( $var );
 	}
 
-	if ( ! isset( $var ) )
+	if ( ! isset( $var ) ) {
 		$var = FALSE;
+	}
 
 	$isEmpty = FALSE;
 	while ( $r -- ) {
@@ -365,8 +368,9 @@ function empty_method5( $var, $r ) {
 		unset( $var );
 	}
 
-	if ( ! isset( $var ) )
+	if ( ! isset( $var ) ) {
 		$var = FALSE;
+	}
 
 	$isEmpty = FALSE;
 	while ( $r -- ) {
@@ -385,8 +389,9 @@ function empty_method6( $var, $r ) {
 		unset( $var );
 	}
 
-	if ( ! isset( $var ) )
+	if ( ! isset( $var ) ) {
 		$var = FALSE;
+	}
 
 	$isEmpty = FALSE;
 	while ( $r -- ) {
@@ -405,8 +410,9 @@ function empty_method7( $var, $r ) {
 		unset( $var );
 	}
 
-	if ( ! isset( $var ) )
+	if ( ! isset( $var ) ) {
 		$var = FALSE;
+	}
 
 	$isEmpty = FALSE;
 	while ( $r -- ) {
@@ -425,8 +431,9 @@ function empty_method8( $var, $r ) {
 		unset( $var );
 	}
 
-	if ( ! isset( $var ) )
+	if ( ! isset( $var ) ) {
 		$var = FALSE;
+	}
 
 	$isEmpty = FALSE;
 	while ( $r -- ) {
@@ -445,8 +452,9 @@ function empty_method9( $var, $r ) {
 		unset( $var );
 	}
 
-	if ( ! isset( $var ) )
+	if ( ! isset( $var ) ) {
 		$var = FALSE;
+	}
 
 	$isEmpty = FALSE;
 	while ( $r -- ) {
@@ -465,8 +473,9 @@ function empty_method10( $var, $r ) {
 		unset( $var );
 	}
 
-	if ( ! isset( $var ) )
+	if ( ! isset( $var ) ) {
 		$var = FALSE;
+	}
 
 	$isEmpty = FALSE;
 	while ( $r -- ) {
@@ -639,8 +648,9 @@ function startsWith_method1( $haystack, $needle, $r ) {
 
 function startsWith_method2( $haystack, $needle, $r ) {
 
-	if ( empty( $needle ) )
+	if ( empty( $needle ) ) {
 		$needle = 'abcd';
+	}
 
 	while ( $r -- ) {
 		$result = strncmp( $haystack, $needle, 4 ) === 0;
@@ -1292,6 +1302,7 @@ function quotes_method7( $r ) {
 <h1>My PHP Performance Benchmarks</h1>
 
 <p>PHP version <?php echo phpversion(); ?> is running on this server.
+
 <p>Please note that these are micro benchmarks. Micro benchmarks are stupid.
 	I created this comparison to learn something about PHP and how the PHP compiler works.
 	This can not be used to compare PHP versions or servers.</p>
