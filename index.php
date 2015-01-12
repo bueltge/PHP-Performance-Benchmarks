@@ -1,5 +1,14 @@
 <?php
+/**
+ * Set error reporting for different checks
+ */
+error_reporting( 0 );
 
+/**
+ * The repetitions in each test
+ *
+ * @type integer
+ */
 $repetitions = 10000;
 
 function getmicrotime() {
@@ -287,10 +296,6 @@ function empty_method1( $var, $r ) {
 
 	if ( $var < 0 ) {
 		unset( $var );
-	}
-
-	if ( ! isset( $var ) ) {
-		$var = FALSE;
 	}
 
 	$isEmpty = FALSE;
