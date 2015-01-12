@@ -314,6 +314,7 @@ function empty_method2( $var, $r ) {
 	if ( $var < 0 ) {
 		unset( $var );
 	}
+
 	$isEmpty = FALSE;
 	while ( $r -- ) {
 		if ( empty( $var ) ) {
