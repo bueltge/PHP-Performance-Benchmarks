@@ -2,7 +2,9 @@
 /**
  * Set error reporting for different checks
  */
-error_reporting( 0 );
+ini_set( 'display_errors', 1 );
+ini_set( 'display_startup_errors', 1 );
+error_reporting( E_ALL & ~E_NOTICE );
 
 /**
  * The repetitions in each test
@@ -630,6 +632,10 @@ function strstr_method7( $haystack, $needle, $r ) {
 
 function strstr_method8( $haystack, $needle, $r ) {
 
+	if ( PHP_VERSION_ID >= 53000 ) {
+		return 'Function ereg is deprecated since 5.3';
+	}
+
 	$found = FALSE;
 	while ( $r -- ) {
 		// Function ereg is deprecated since 5.3
@@ -783,6 +789,10 @@ function strreplace_method3( $subject, $search, $r ) {
 }
 
 function strreplace_method4( $subject, $search, $r ) {
+
+	if ( PHP_VERSION_ID >= 53000 ) {
+		return 'Function ereg_replace is deprecated since 5.3';
+	}
 
 	$replace = $search;
 	while ( $r -- ) {
@@ -942,6 +952,10 @@ function split_method1( $string, $r ) {
 }
 
 function split_method2( $string, $r ) {
+
+	if ( PHP_VERSION_ID >= 53000 ) {
+		return 'Function split is deprecated since 5.3';
+	}
 
 	while ( $r -- ) {
 		// Function split is deprecated since 5.3
